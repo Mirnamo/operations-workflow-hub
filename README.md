@@ -30,15 +30,28 @@ flowchart TD
 
 ## Quick start
 
+> Important: use Python 3.11 for this project. Python 3.14 is currently too new for the pinned `pydantic-core` dependency and will fail during installation.
+
 ### API
+
+```powershell
+cd backend
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+python -m uvicorn app.main:app --reload
+```
+
+On macOS/Linux:
 
 ```bash
 cd backend
-python -m venv .venv
-# Windows: .venv\Scripts\activate
-# macOS/Linux: source .venv/bin/activate
+python3.11 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
 pip install -r requirements.txt
-uvicorn app.main:app --reload
+python -m uvicorn app.main:app --reload
 ```
 
 API docs: [http://localhost:8000/docs](http://localhost:8000/docs)
